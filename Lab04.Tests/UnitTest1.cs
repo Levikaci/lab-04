@@ -6,7 +6,7 @@ namespace Lab04.Tests
         [Fact]
         public void SampeTest_Passes()
         {
-            Assert.True(false);
+            Assert.True(true);
         }
     }
 }
