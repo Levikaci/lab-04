@@ -5,6 +5,21 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddOpenApi();
 
 var app = builder.Build();
+var version = app.Configuration["Lab.Version"] ?? "1.0";
+var simulateFailure = app.Configuration.GetValue<bool>("Lab:SimulateFailure");
+
+app.MapGet("/health", () =>
+{
+    if (simulateFailure)
+    {
+        return Results.Json(
+            new
+            { status = "error", version },
+            statusCode: 503);
+    }
+    return Results.Ok(new { status = "ok", version });
+});
+
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
