@@ -96,3 +96,4 @@ C:\Users\Student\Desktop\исп-9\мдк 04.02\4 лаба\Lab04.Tests\obj\Debug\
 C:\Users\Student\Desktop\исп-9\мдк 04.02\4 лаба\Lab04.Tests\obj\Debug\net9.0\Lab04.Tests.pdb
 C:\Users\Student\Desktop\исп-9\мдк 04.02\4 лаба\Lab04.Tests\obj\Debug\net9.0\Lab04.Tests.genruntimeconfig.cache
 C:\Users\Student\Desktop\исп-9\мдк 04.02\4 лаба\Lab04.Tests\obj\Debug\net9.0\ref\Lab04.Tests.dll
+C:\Users\Student\Desktop\исп-9\мдк 04.02\4 лаба\Lab04.Tests\obj\Debug\net9.0\Lab04.Tests.sourcelink.json
