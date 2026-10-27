@@ -1,8 +1,8 @@
-FROM mcr.microsoft.com/dotnet/sdk:9.0 AS bulid
+FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
 WORKDIR /src
 
-copy Lab04/Lab04.csproj Lab04/
-RUN dotnet restore Lab04/Lab04.csproj
+COPY ./Lab04/ ./Lab04/
+RUN dotnet restore ./Lab04/Lab04.csproj
 
 COPY Lab04/ Lab04/
 WORKDIR /src/Lab04
@@ -10,7 +10,7 @@ RUN dotnet publish Lab04.csproj -c Release -o /app/publish
 
 FROM mcr.microsoft.com/dotnet/aspnet:9.0 AS final
 WORKDIR /app
-COPY --from=bulid /app/publish . 
+COPY --from=build /app/publish .
 EXPOSE 8080
 ENV ASPNETCORE_URLS=http://+:8080
 ENTRYPOINT ["dotnet", "Lab04.dll"]
